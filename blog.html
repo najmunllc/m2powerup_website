@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-entry {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .intro-section {
+            background-color: #252b4e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #252b4e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #d95161;
+            margin-left: 10px; /* Add margin to push the link to the left */
+        }
+
+        .footer a:first-child {
+            margin-left: 0; /* Remove margin for the first link */
+        }
+
+        .read-more-button {
+            background-color: #ee886f;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-section">
+        <img src="icon.png" width="100" height
+        ="100" alt="company icon hand with dollar sign above it">
+        <h1>Welcome to Our Blog</h1>
+        <p>Blog: "Welcome to the M2PowerUp Blog! Our blog is your go-to source for insightful articles, tips, and stories focused on empowering individuals to overcome obstacles, build new skills, and achieve their goals. <br>We're dedicated to sharing practical advice on personal development, education, entrepreneurship, and much more. Explore our blog to discover inspiring stories, helpful guides, and valuable resources to fuel your journey toward a brighter future."</p>
+    </div>
+
+    <div class="blog-entry" id="blog1">
+        <h2>Unlocking Opportunities: Discovering Your Skills, Interests, and Passions for Self-Employment</h2>
+        <img src="urSkill.jpeg" alt="Blog Image 1" width="300">
+        <p>
+            In a world where self-employment offers a path to financial independence and personal fulfillment, embarking on a journey to discover your skills, interests, and passions can be a transformative experience. .
+            <span class="full-content" style="display: none;">
+                This is the content of the first blog entry. You can read the complete blog by clicking the "Read More" button.
+            </span>
+        </p>
+        <button class="read-more-button" onclick="showFullContent('blog1')">Read More</button>
+    </div>
+
+    <div class="blog-entry" id="blog2">
+        <h2>Turning $10,000 into $45,000: A Guide to Starting Your Business Journey</h2>
+        <img src="makingMoney.jpeg" alt="Blog Image 2" width="300">
+        <p>
+            As an investor providing advice to someone in this situation, I would offer the following guidance to help them start a business that could increase their income from $10,000 to $45,000.
+            <span class="full-content" style="display: none;">
+                This is the content of the second blog entry. You can read the complete blog by clicking the "Read More" button.
+            </span>
+        </p>
+        <button class="read-more-button" onclick="showFullContent('blog2')">Read More</button>
+    </div>
+
+    <!-- Add more blog entries as needed -->
+
+    <div class="footer">
+        <a href="Services.html" class="back-home">Back to Services</a>
+        &copy; 2023 Your Blog Name. All rights reserved.
+    </div>
+
+    <script>
+        function showFullContent(blogId) {
+            const fullContent = document.getElementById(blogId).querySelector('.full-content');
+            const readMoreButton = document.getElementById(blogId).querySelector('.read-more-button');
+            fullContent.style.display = 'block';
+            readMoreButton.style.display = 'none';
+        }
+    </script>
+
+    <!-- blog.html -->
+<!-- Include your previous HTML code for the blog index page -->
+
+<!-- Add "Read More" buttons to each blog entry -->
+
+<!-- Include JavaScript to handle the "Read More" button clicks -->
+<script>
+    
+    const readMoreButtons = document.querySelectorAll('.read-more-button');
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const title = button.getAttribute('data-title');
+            const image = button.getAttribute('data-image');
+            const content = button.getAttribute('data-content');
+
+              // Store the data in localStorage (you can use other methods as well)
+            localStorage.setItem('fullBlogTitle', title);
+            localStorage.setItem('fullBlogImage', image);
+            localStorage.setItem('fullBlogContent', content);
+
+            // Redirect to the full-blog.html page
+            window.location.href = 'full-blog.html';
+        });
+    });
+</script>
+
+</body>
+</html>

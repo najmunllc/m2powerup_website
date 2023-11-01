@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>M2powerup</title>
+    <!-- link to css-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--- Box Icons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!--navbar-->
+    <nav>
+        <!--logo-->
+        <a href="#" class="logo"><img src="icon.png" height="50px" width="50px" alt="site icon">M2Powerup</a>
+
+        <div class="toggle" onclick="toggleMenu();"></div>
+
+        <!--if you want the menu to be selected on the same page with a scroll down action place <li><a href="#home">Home</a></li>-->
+        <ul class="menu">
+            <li><a href="index.html" onclick="toggleMenu();">Home</a></li>
+            <li><a href="about.html" onclick="toggleMenu();">About us</a></li>
+            <li><a href="Services.html" onclick="toggleMenu();">Services</a></li>
+            <li><a href="terms.html" onclick="toggleMenu();">Terms</a></li>
+            <li><a href="contactus.html" class="active-btn" onclick="toggleMenu();">Contact us</a></li>
+            <!-- Add a dropdown for Sign Up and Login -->
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Account</a>
+                <div class="dropdown-content">
+                    <a href="signup.html">Sign Up</a>
+                    <a href="login.html">Login</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Home content goes here -->
+    <section id="home">
+        <div class="home-text">
+            <h2>"M2PowerUp" provides </h2>
+            <h1>accessible education, skills, and resources <br> fostering economic mobility and  <br> transforming lives in communities worldwide.</h1>
+            <p>We are "Empowering you to <br>rise above challenges"</p>
+
+            <!--Email-->
+            <div class="email-box"> 
+                <input type="email" placeholder="Enter Email">
+                <a href="#"><i class='bx bxs-fast-forward-circle'></i></a>
+            </div>
+        </div>
+
+
+        <!--image-->
+        <div class="home-img">
+           <img src="profile.jpg" alt="Avatar" style="width: 400px">
+        </div>
+
+        <!--scroll-->
+        <a href="#services" class="scroll-down">
+            <i class='bx bx-mouse'></i>
+            Scroll Down
+            <i class='bx bx-down-arrow-alt'></i>
+        </a>
+    </section>
+
+            <!--services-->
+            <section id="services">
+                <div class="heading"> 
+                    <h2>How We Can Help</h2>
+                    <h1>Our Platform Offers These Services</h1>
+                </div>
+
+                <div class="services-content">
+                    <!--box1-->
+                    <div class="box">
+                        <img src="icon1.png" alt="">
+                        <span>Job Market</span>
+                        <p>A dedicated section that connects <br>job seekers with employment oppertonites</p>
+                    </div> 
+
+                    <!--box2-->
+                    <div class="box">
+                        <img src="icon2.png" alt="">
+                        <span>Skill hub</span>
+                        <p>A comprehensive online platform that offers <br>a array of skill development courses</p>
+                    </div>
+
+                    <!--box3-->
+                    <div class="box">
+                        <img src="icon4.png" alt="">
+                        <span>Savings calculator</span>
+                        <p>A financial tool designed to assist users <br>in managing their personal finances</p>
+                    </div>
+
+                       <!--box4-->
+                    <div class="box">
+                        <img src="icon3.png" alt="">
+                        <span>Disscusion forum</span>
+                        <p>Community connection forum to connect network <br>and seek guidance with other like minded indivuals</p>
+                    </div>
+
+                    <!--box5-->
+                    <div class="box">
+                        <img src="icon5.png" alt="">
+                        <span>Resources hub</span>
+                        <p>A central repository of valuable resources, tips and <br>information aimed at helping you on your journey</p>
+                    </div> 
+
+                    <!--box6-->
+                    <div class="box">
+                        <img src="icon6.png" alt="">
+                        <span>Blog</span>
+                        <p>Keeping you upto date on the latest job reports, financing <br>platforms and all "happenings" to get you prepared.</p>
+                    </div>  
+            
+            </section>
+
+            <!--Team-->
+               <section id="team">
+                <div class="heading"> 
+                    <h2>Helping People Globally</h2>
+                    <h1>Meet The Team</h1>
+                </div>
+
+                <div class="team-content">
+                    <!--Box 1-->
+                     <div class="team-box">
+                        <img src="profilepicJ.png" alt="icon for first team member Jannah">
+                        <h1> Jannah Abdul-Kareem</h1>
+                        <p>Full time student, Honors roll and Junior front-end developer <br>from Agora Cyber Charter School</p>
+                     </div>
+    
+                     <div class="team-box">
+                        <img src="profilepicN.png" alt="icon for second team member Naazneen">
+                            <h1> Naazneen Day</h1>
+                            <p>Full time student and junior honor society student at <br>Agora Cyber Charter School and Junior front End web Developer</p>
+                     </div>
+
+                     <div class="team-box">
+                        <img src="profilepicJ.png" alt="icon for second team member Naazneen">
+                            <h1> Team Leader</h1>
+                            <p>Team instructor for front-end web development.</p>
+                     </div>
+                </div>
+               </section>
+
+               <!--Target Market-->
+               <section id="target">
+                <div class="target-content">
+                    <h2>Some of the People Who Can Benefit From Our Platform</h2>
+                    <div class="target-box">
+                        <img src="#" alt="">
+                        <h1>Unemployed & Underemployed</h1>
+                        <p>Those actively seeking employment or working but not earning a sustainable income</p>
+
+                    </div>
+                    
+                    <div class="target-content">
+                        <div class="target-box">
+                            <img src="#" alt="">
+                            <h1>Young Adults & Others</h1>
+                            <p>We also welcome low-income families, Urban & Rural communities, Disadvantaged, community-based organization and others</p>
+    
+                        </div>
+                </div>
+               </section>
+
+               <!---
+            
+                section for testimonials later  <section id="testimonials" <div class ="heading" <h2>Our Users Speak 
+
+                </h2> <h1> write a brief description</h1> </div> </section> after <div class="testimonials-box"> 
+                <img src="#" alt=""> <h1> first user</h1> <h2>which program they liked</h2> <p> their testimony</p> </div> write this again for other testimonies-->
+
+               <!--Connect-->
+               <div class="connect" id="connect"> 
+                <h1>Join our email</h1>
+                <div class="email-box">
+                    <input type="email" placeholder="Enter your email...">
+                    <a href="#"><i class='bx bxs-fast-forward-circle' ></i></a>
+                </div>
+
+                <div class="social">
+                    <a href="#"> <i class="bx bxl-facebook"></i></a>
+                    <a href="#"> <i class="bc bxl-twitter"></i></a>
+                    <a href="#"> <i class="bx bxl-intsagram"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+
+                </div>
+
+               </div>
+
+               <!--Copyright-->
+               <div class="copyright">
+                <p>&#169; M2PowerUp</p> 
+                <p><span>♥</span>2023 All Right Reserved</p>
+               </div>
+
+               <!--Link To JavaScript-->
+               <script src="main.js"></script>
+
+               <!--Link To Javascript-->
+            <script src="app.js"></script>
+
+    
+</body>
+</html>

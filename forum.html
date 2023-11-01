@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Discussion</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class=" text-white text-center p-4" style="background-color: #ee886f;">
+        <h1>Forum Discussion</h1>
+    </header>
+    
+ 
+    <!-- Forum Section -->
+    <section id="forum" class="container mt-5" style="background-color: #5b4b8a;">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Forum Topic</h2>
+                <div id="discussion" class="mt-4">
+                    <!-- Discussion messages will be dynamically added here -->
+                </div>
+                <form id="messageForm" class="mt-4">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: #ee886f;">Post Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     <!-- Back to Services Button -->
+     <div class="container mt-4">
+        <a href="Services.html" class="btn btn-primary" style="background-color: #ee886f;">Back Services</a>
+    </div>
+
+    <!-- Footer with Copyright -->
+
+    <style>
+        /* Add custom CSS for footer and button styling */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ee886f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    
+        /* Additional styles to ensure the button is displayed below the content */
+        .container {
+            margin-bottom: 80px; /* Adjust this value as needed */
+        }
+    </style>
+    <div class="footer">
+        &copy; 2023 Your Company Name. All rights reserved.
+    </div>
+ 
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Array to store discussion messages
+            var discussionMessages = [];
+ 
+            // Function to display discussion messages
+            function displayMessages() {
+                var discussionHTML = '';
+                for (var i = 0; i < discussionMessages.length; i++) {
+                    discussionHTML += '<div class="card mb-3">';
+                    discussionHTML += '<div class="card-body">';
+                    discussionHTML += '<h5 class="card-title">' + discussionMessages[i].name + '</h5>';
+                    discussionHTML += '<p class="card-text">' + discussionMessages[i].message + '</p>';
+                    discussionHTML += '</div>';
+                    discussionHTML += '</div>';
+                }
+                $('#discussion').html(discussionHTML);
+            }
+ 
+            // Submit message form
+            $('#messageForm').submit(function(e) {
+                e.preventDefault();
+                var name = $('#name').val();
+                var message = $('#message').val();
+                var newMessage = {
+                    name: name,
+                    message: message
+                };
+                discussionMessages.push(newMessage);
+                displayMessages();
+                $('#name').val('');
+                $('#message').val('');
+            });
+        });
+    </script>
+</body>
+</html>

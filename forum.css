@@ -1,0 +1,20 @@
+
+body {
+    background-color: #252b48;
+    font-family: Arial, sans-serif;
+   
+}
+ 
+header {
+    background-color: #ee886f;
+    font-weight: bold;
+}
+ 
+#discussion {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#section {
+    background-color: #252b48;
+}

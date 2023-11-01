@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+            position: relative;
+            min-height: 100vh;
+
+        }
+
+        header {
+            background-color: #ee886f;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .filters {
+            margin: 20px;
+        }
+
+        .job-listings {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the "Back to Home" button */
+    .back-button {
+        background-color: #ee886f;
+        color: #fff;
+        border: 2px solid #2980b9;
+        padding: 10px 20px;
+        margin: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s; /* Transition effect for background and text color */
+    }
+
+    /* Hover effect for the button */
+    .back-button:hover {
+        background-color: 582d52;
+        color: #fff;
+    }
+
+
+    /* Style the footer */
+    .footer {
+        background-color: #ee886f;
+        color: #fff;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto;
+    }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Job Marketplace</h1>
+    </header>
+    <div class="filters">
+        <label for="category">Filter by Category:</label>
+        <select id="category">
+            <option value="all">All Categories</option>
+            <option value="tech">Technology</option>
+            <option value="sales">Sales</option>
+            <option value="healthcare">Healthcare</option>
+        </select>
+    </div>
+    <div class="job-listings">
+        <!-- Job listings will be dynamically generated using JavaScript -->
+    </div>
+
+    <button class="back-button" onclick="goBack()">Back to Services</button>
+    <footer>
+        <p>&copy; 2023 M2Powerup. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample job listings data
+        const jobListings = [
+            { title: 'Web Developer', category: 'tech', location: 'New York', description: 'We are looking for a skilled web developer...' },
+            { title: 'Sales Representative', category: 'sales', location: 'Chicago', description: 'Join our sales team and boost your career...' },
+            { title: 'Nurse', category: 'healthcare', location: 'Los Angeles', description: 'We are hiring dedicated nurses for our hospital...' },
+            // Add more job listings
+        ];
+
+        const categoryFilter = document.getElementById('category');
+        const jobListingsContainer = document.querySelector('.job-listings');
+
+        // Function to filter job listings based on category
+        function filterJobListings() {
+            const selectedCategory = categoryFilter.value;
+            const filteredListings = selectedCategory === 'all' ? jobListings : jobListings.filter(job => job.category === selectedCategory);
+            displayJobListings(filteredListings);
+        }
+
+        // Function to display job listings
+        function displayJobListings(listings) {
+            jobListingsContainer.innerHTML = '';
+            listings.forEach(job => {
+                const jobCard = document.createElement('div');
+                jobCard.classList.add('job-card');
+                jobCard.innerHTML = `
+                    <h2>${job.title}</h2>
+                    <p><strong>Category:</strong> ${job.category}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <p>${job.description}</p>
+                `;
+                jobListingsContainer.appendChild(jobCard);
+            });
+        }
+
+        // Initial display of job listings
+        displayJobListings(jobListings);
+
+        // Event listener for category filter
+        categoryFilter.addEventListener('change', filterJobListings);
+
+        function goBack() {
+    // Redirect to the home page or the desired URL when the "Back to Home" button is clicked
+
+    window.location.href = 'Services.html'; // Replace 'index.html' with your home page URL
+}
+    </script>
+</body>
+</html>

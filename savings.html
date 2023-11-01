@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            color: #ee886f;
+        }
+
+        .input-container {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #ee886f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #d95161;
+            text-decoration: none;
+        }
+
+        .result {
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .result p {
+            margin: 10px 0;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #252b4e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+
+        .footer a {
+            text-decoration: none; /* Remove text underline */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Savings Calculator</h1>
+        <div class="input-container">
+            <label for="initialDeposit">Initial Deposit ($):</label>
+            <input type="number" id="initialDeposit" placeholder="0" step="100">
+        </div>
+        <div class="input-container">
+            <label for="monthlyContributions">Monthly Contributions ($):</label>
+            <input type="number" id="monthlyContributions" placeholder="0" step="100">
+        </div>
+        <div class="input-container">
+            <label for="interestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="interestRate" placeholder="0" step="0.1">
+        </div>
+        <div class="input-container">
+            <label for="years">Number of Years:</label>
+            <input type="number" id="years" placeholder="0" step="1">
+        </div>
+        <button id="calculateButton">Calculate</button>
+        <div class="result">
+            <p>Your savings after <span id="yearsResult">0</span> years:</p>
+            <p>$<span id="savingsResult">0</span></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialDepositInput = document.getElementById('initialDeposit');
+            const monthlyContributionsInput = document.getElementById('monthlyContributions');
+            const interestRateInput = document.getElementById('interestRate');
+            const yearsInput = document.getElementById('years');
+            const calculateButton = document.getElementById('calculateButton');
+            const yearsResult = document.getElementById('yearsResult');
+            const savingsResult = document.getElementById('savingsResult');
+
+            calculateButton.addEventListener('click', function() {
+                const initialDeposit = parseFloat(initialDepositInput.value);
+                const monthlyContributions = parseFloat(monthlyContributionsInput.value);
+                const interestRate = parseFloat(interestRateInput.value) / 100;
+                const years = parseInt(yearsInput.value);
+
+                let futureValue = initialDeposit;
+
+                for (let i = 0; i < years; i++) {
+                    futureValue += monthlyContributions * 12;
+                    futureValue *= (1 + interestRate);
+                }
+
+                yearsResult.textContent = years;
+                savingsResult.textContent = futureValue.toFixed(2);
+            });
+        });
+    </script>
+    <div class="footer">
+        <a href="Services.html" color="#fff">Back to Services</a>
+        &copy; 2023 Your Company Name. All rights reserved.
+    
+    </div>
+</body>
+</html>
